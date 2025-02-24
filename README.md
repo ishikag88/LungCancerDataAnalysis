@@ -1,6 +1,6 @@
 # **Lung Cancer Data Analysis Project**
 ## Tools :
-MySQL, MS Excel, MS Power BI, Github
+MySQL, MS Excel, Google Sheets, MS Power BI, Github
 ## Skills :
 Data Extraction, Data Transfer, Data Loading, Data Analysis, Data Cleansing, Data Manipulation, Data Visualization
 ## Dataset Size :
