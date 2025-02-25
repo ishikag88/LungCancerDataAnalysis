@@ -2,7 +2,7 @@
   - Duplicate Data : None
   - Missing Data : Yes, in 2 columns cancer_stage and treatment_type,  
     handled with none as a value by choosing not null constraint in sql table  
-<picture><img src="Q3 Duplicates.png"></picture>
+<picture><img src="allimages/Q3 Duplicates.png"></picture>
     
 ## Step 2. Create SQL Database Table
  - Tool : Microsoft SQL Management Studio Version 20.2
@@ -42,7 +42,7 @@
 
 select * from lungcancertable where Lung_Cancer_Diagnosis='Yes';
 <picture>
-<img src="Q1.png">
+<img src="allimages/Q1.png">
 </picture>  
 
 *2. Count the number of smokers and non-smokers.*  
@@ -50,7 +50,7 @@ select * from lungcancertable where Lung_Cancer_Diagnosis='Yes';
 select Smoker, count(smoker) as Smokers_count from lungcancertable group by smoker;
 
 <picture>
-<img src="Q2.png">
+<img src="allimages/Q2.png">
 </picture>  
 
 *3. List all unique cancer stages present in the dataset.*  
@@ -59,7 +59,7 @@ select count(cancer_stage) as count, cancer_stage from lungcancertable group by 
 order by Cancer_Stage;
 
 <picture>
-<img src="Q3.png">
+<img src="allimages/Q3.png">
 </picture>  
 
 *4. Retrieve the average number of cigarettes smoked per day by smokers.*  
@@ -67,7 +67,7 @@ order by Cancer_Stage;
 select smoker, AVG(cigarettes_per_day) as AvgCigPerDay from lungcancertable group by smoker;
 
 <picture>
-<img src="Q4.png">
+<img src="allimages/Q4.png">
 </picture>  
 
 *5. Count the number of people exposed to high air pollution.*  
@@ -76,7 +76,7 @@ select sum(case when air_pollution_exposure = 'high' then 1 else 0 end) as HighA
 from lungcancertable;
 
 <picture>
-<img src="Q5.png">
+<img src="allimages/Q5.png">
 </picture>  
 
 *6. Find the top 5 countries with the highest lung cancer deaths.*  
@@ -86,11 +86,11 @@ FROM lungcancertable
 GROUP BY Country ORDER BY annualdeaths DESC;
 
 <picture>
-<img src="Q6.png">
+<img src="allimages/Q6.png">
 </picture>
 
 <picture>
-<img src="Q6 II.png">
+<img src="allimages/Q6 II.png">
 </picture>  
 
 *7. Count the number of people diagnosed with lung cancer by gender.*  
@@ -99,7 +99,7 @@ select Gender, sum(case when lung_cancer_diagnosis = 'Yes' then 1 else 0 end)
 as Countbygender from lungcancertable group by Gender
 
 <picture>
-<img src="Q7.png">
+<img src="allimages/Q7.png">
 </picture>  
 
 *8. Retrieve records of individuals older than 60 who are diagnosed with lung cancer.*  
@@ -107,11 +107,11 @@ as Countbygender from lungcancertable group by Gender
 select * from lungcancertable where age>60 and Lung_Cancer_Diagnosis = 'Yes';
 
 <picture>
-<img src="Q8.png">
+<img src="allimages/Q8.png">
 </picture>
 
 <picture>
-<img src="Q8 I.png">
+<img src="allimages/Q8 I.png">
 </picture>  
 
 *9. Find the percentage of smokers who developed lung cancer.*  
@@ -123,7 +123,7 @@ sum(case when lung_cancer_diagnosis = 'Yes' then 1 else 0 end) as percentofdevel
 from lungcancertable
 
 <picture>
-<img src="Q9.png">
+<img src="allimages/Q9.png">
 </picture>  
 
 *10. Calculate the average survival years based on cancer stages.*  
@@ -132,7 +132,7 @@ select cancer_stage, avg(survival_years) as AvgSurvivalYears
 from lungcancertable group by cancer_stage order by cancer_stage;
 
 <picture>
-<img src="Q.10.png">
+<img src="allimages/Q.10.png">
 </picture>  
 
 *11. Count the number of lung cancer patients based on passive smoking.*  
@@ -141,7 +141,7 @@ select sum(case when lung_cancer_diagnosis = 'Yes' and passive_smoker = 'Yes'
 then 1 else 0 end) as Result from lungcancertable  
 
 <picture>
-<img src="Q11.png">
+<img src="allimages/Q11.png">
 </picture>
 
 *12. Find the country with the highest lung cancer prevalence rate.* 
@@ -151,7 +151,7 @@ WHERE Lung_Cancer_Prevalence_Rate =
 (SELECT MAX(Lung_Cancer_Prevalence_Rate) FROM lungcancertable);  
 
 <picture>
-<img src="Q12.png">
+<img src="allimages/Q12.png">
 </picture>
 
 *14. Determine the mortality rate for patients with and without early detection.*  
@@ -161,7 +161,7 @@ SELECT Early_Detection,
 	AS MortalityRate FROM lungcancertable GROUP BY Early_Detection;  
 
 <picture>
-<img src="Q14.png">
+<img src="allimages/Q14.png">
 </picture>
 
 *15. Group the lung cancer prevalence rate by developed vs. developing.*  
@@ -170,7 +170,7 @@ select Developed_or_Developing, round(sum(lung_cancer_prevalence_rate),2) as tot
 from lungcancertable Group by Developed_or_Developing;  
 
 <picture>
-<img src="Q15.png">
+<img src="allimages/Q.15.png">
 </picture>
 
 *17. Find the average age of lung cancer patients for each country.*  
@@ -179,7 +179,7 @@ select country, AVG(age) as AvgAgeLCPatients from lungcancertable
 where Lung_Cancer_Diagnosis = 'Yes' group by country;  
 
 <picture>
-<img src="Q17.png">
+<img src="allimages/Q17.png">
 </picture>
 
 *18. Calculate the risk factor of lung cancer by smoker status, passive smoking, and family history.*  
@@ -192,7 +192,7 @@ GROUP BY Smoker, Passive_Smoker, Family_History
 ORDER BY Risk_Factor_Percentage DESC;  
 
 <picture>
-<img src="Q18.png">
+<img src="allimages/Q18.png">
 </picture>
 
 *19. Rank countries based on their mortality rate.*  
@@ -211,11 +211,11 @@ DENSE_RANK() OVER (ORDER BY (cm.Country_Total_Mortality * 100.0 / tm.Total_Globa
 FROM CountryMortality cm CROSS JOIN TotalMortality tm ORDER BY Rank;  
 
 <picture>
-<img src="Q19 I.png">
+<img src="allimages/Q19 I.png">
 </picture>  
 
 <picture>
-<img src="Q19 II.png">
+<img src="allimages/Q19 II.png">
 </picture>
 
 ### Analysis Based on Dashboard
