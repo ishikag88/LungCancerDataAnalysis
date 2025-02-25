@@ -17,7 +17,7 @@ Data Extraction, Data Transfer, Data Loading, Data Analysis, Data Cleansing, Dat
 
 The Lung Cancer Prediction Dataset contains patient records that help analyze risk factors associated with lung cancer. It includes demographic details such as age, gender, country, and medical and lifestyle factors like smoking habits, passive smoking exposure, and air pollution levels. The dataset also provides genetic risk levels, lung cancer diagnosis status, cancer stage, and treatment types, making it useful for predictive modeling and healthcare analytics. Additionally, it includes computed risk scores, survival years, and mortality rates, which can be used to assess the impact of different factors on patient outcomes. The dataset is valuable for identifying high-risk individuals, studying smoking-related lung cancer trends, and developing early detection strategies. Researchers and data analysts can leverage this dataset to build machine-learning models for cancer prediction, survival analysis, and personalized treatment recommendations.
 
-## Problem Statement : (Please refer to dashboard for thorough insights)
+## Problem Statement : (Please refer to analysis.md for solutions)
 
 ### Basic Level
 
