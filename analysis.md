@@ -141,7 +141,7 @@ select sum(case when lung_cancer_diagnosis = 'Yes' and passive_smoker = 'Yes'
 then 1 else 0 end) as Result from lungcancertable  
 
 <picture>
-<img src=".png">
+<img src="Q11.png">
 </picture>
 
 *12. Find the country with the highest lung cancer prevalence rate.* 
@@ -151,69 +151,73 @@ WHERE Lung_Cancer_Prevalence_Rate =
 (SELECT MAX(Lung_Cancer_Prevalence_Rate) FROM lungcancertable);  
 
 <picture>
-<img src=".png">
+<img src="Q12.png">
 </picture>
-
-~~13. Identify the smoking years' impact on lung cancer.~~
-
 
 *14. Determine the mortality rate for patients with and without early detection.*  
 
+SELECT Early_Detection,  
+    SUM(CASE WHEN Early_Detection = 'Yes' THEN Mortality_Rate ELSE 0 END) * 1.0 / SUM(Mortality_Rate)  
+	AS MortalityRate FROM lungcancertable GROUP BY Early_Detection;  
+
 <picture>
-<img src=".png">
+<img src="Q14.png">
 </picture>
 
-*15. Group the lung cancer prevalence rate by developed vs. developing countries.*  
+*15. Group the lung cancer prevalence rate by developed vs. developing.*  
+
+select Developed_or_Developing, round(sum(lung_cancer_prevalence_rate),2) as totalLCPrevalenceRate  
+from lungcancertable Group by Developed_or_Developing;  
 
 <picture>
-<img src=".png">
-</picture>
-
-*16. Identify the correlation between lung cancer prevalence and air pollution levels.*  
-
-<picture>
-<img src=".png">
+<img src="Q15.png">
 </picture>
 
 *17. Find the average age of lung cancer patients for each country.*  
 
+select country, AVG(age) as AvgAgeLCPatients from lungcancertable  
+where Lung_Cancer_Diagnosis = 'Yes' group by country;  
+
 <picture>
-<img src=".png">
+<img src="Q17.png">
 </picture>
 
 *18. Calculate the risk factor of lung cancer by smoker status, passive smoking, and family history.*  
 
+SELECT Smoker, Passive_Smoker, Family_History, COUNT(*) AS Total_Cases,  
+SUM(CASE WHEN lung_cancer_diagnosis = 'Yes' THEN 1 ELSE 0 END) AS Lung_Cancer_Cases,  
+(SUM(CASE WHEN lung_cancer_diagnosis = 'Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*))  
+AS Risk_Factor_Percentage FROM lungcancertable  
+GROUP BY Smoker, Passive_Smoker, Family_History  
+ORDER BY Risk_Factor_Percentage DESC;  
+
 <picture>
-<img src=".png">
+<img src="Q18.png">
 </picture>
 
 *19. Rank countries based on their mortality rate.*  
 
-<picture>
-<img src=".png">
-</picture>
-
-*20. Determine if treatment type has a significant impact on survival years.*  
-
-<picture>
-<img src=".png">
-</picture>
-
-*21. Compare lung cancer prevalence in men vs. women across countries.*  
-
-<picture>
-<img src=".png">
-</picture>
-
-*22. Find how occupational exposure, smoking, and air pollution collectively impact lung cancer rates.*  
+WITH CountryMortality AS (  
+SELECT Country, SUM(Mortality_Rate) AS Country_Total_Mortality  
+FROM lungcancertable GROUP BY Country  
+),  
+TotalMortality AS (  
+SELECT SUM(Country_Total_Mortality) AS Total_Global_Mortality FROM CountryMortality  
+)
+-- Step 3: Compute the mortality rate percentage and rank countries
+SELECT cm.Country, cm.Country_Total_Mortality,  
+(cm.Country_Total_Mortality * 100.0 / tm.Total_Global_Mortality) AS Mortality_Percentage,  
+DENSE_RANK() OVER (ORDER BY (cm.Country_Total_Mortality * 100.0 / tm.Total_Global_Mortality) DESC) AS Rank
+FROM CountryMortality cm CROSS JOIN TotalMortality tm ORDER BY Rank;  
 
 <picture>
-<img src=".png">
-</picture>
-
-*23. Analyze the impact of early detection on survival years.*  
+<img src="Q19 I.png">
+</picture>  
 
 <picture>
-<img src=".png">
+<img src="Q19 II.png">
 </picture>
+
+### Analysis Based on Dashboard
+**Refer To Dashboard.md**
 
