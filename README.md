@@ -32,24 +32,24 @@ The Lung Cancer Prediction Dataset contains patient records that help analyze ri
 
 ### Intermediate Level
 
-1. Find the percentage of smokers who developed lung cancer.
-2. Calculate the average survival years based on cancer stages.
-3. Count the number of lung cancer patients based on passive smoking.
-4. Find the country with the highest lung cancer prevalence rate.
-5. Identify the smoking years' impact on lung cancer.
-6. Determine the mortality rate for patients with and without early detection.
-7. Group the lung cancer prevalence rate by developed vs. developing countries.
+9. Find the percentage of smokers who developed lung cancer.
+10. Calculate the average survival years based on cancer stages.
+11. Count the number of lung cancer patients based on passive smoking.
+12. Find the country with the highest lung cancer prevalence rate.
+13. Identify the smoking years' impact on lung cancer.
+14. Determine the mortality rate for patients with and without early detection.
+15. Group the lung cancer prevalence rate by developed vs. developing countries.
 
 ### Advanced Level
 
-1. Identify the correlation between lung cancer prevalence and air pollution levels.
-2. Find the average age of lung cancer patients for each country.
-3. Calculate the risk factor of lung cancer by smoker status, passive smoking, and family history.
-4. Rank countries based on their mortality rate.
-5. Determine if treatment type has a significant impact on survival years.
-6. Compare lung cancer prevalence in men vs. women across countries.
-7. Find how occupational exposure, smoking, and air pollution collectively impact lung cancer rates.
-8. Analyze the impact of early detection on survival years.
+16. Identify the correlation between lung cancer prevalence and air pollution levels.
+17. Find the average age of lung cancer patients for each country.
+18. Calculate the risk factor of lung cancer by smoker status, passive smoking, and family history.
+19. Rank countries based on their mortality rate.
+20. Determine if treatment type has a significant impact on survival years.
+21. Compare lung cancer prevalence in men vs. women across countries.
+22. Find how occupational exposure, smoking, and air pollution collectively impact lung cancer rates.
+23. Analyze the impact of early detection on survival years.
 
 ## 📩 Contact :
 📧 Email: ishika.agrawal0105@gmail.com    
