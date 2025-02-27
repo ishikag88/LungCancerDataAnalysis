@@ -6,6 +6,10 @@
     from lungcancertable Group by Air_Pollution_Exposure;
     
 20. Determine if treatment type has a significant impact on survival years.  
-21. Compare lung cancer prevalence in men vs. women across countries.  
-22. Find how occupational exposure, smoking, and air pollution collectively impact lung cancer rates.  
-23. Analyze the impact of early detection on survival years.
+    A2  - ss name
+    select Treatment_Type, avg(Survival_Years) as AvgSurvivalYears from lungcancertable  
+group by Treatment_Type;
+
+22. Compare lung cancer prevalence in men vs. women across countries.  
+23. Find how occupational exposure, smoking, and air pollution collectively impact lung cancer rates.  
+24. Analyze the impact of early detection on survival years.
