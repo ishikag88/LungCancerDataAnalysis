@@ -9,11 +9,15 @@
     select Treatment_Type, avg(Survival_Years) as AvgSurvivalYears from lungcancertable  
 group by Treatment_Type;
 
-22. Compare lung cancer prevalence in men vs. women across countries.
+22. Compare lung cancer prevalence in men vs. women across countries.  
 
-    A3 - ss name
+    A3I,II,III - ss name
 select Country, gender, avg(Lung_Cancer_Prevalence_Rate) as PrevalenceRate  
 from lungcancertable group by country, Gender order by country asc;
     
 24. Find how occupational exposure, smoking, and air pollution collectively impact lung cancer rates.  
-25. Analyze the impact of early detection on survival years.
+    A4 - ss name
+    select Air_Pollution_Exposure, Occupational_Exposure, smoker,  
+sum(case when lung_cancer_diagnosis = 'Yes' then 1 else 0 end)*1.0/count(lung_cancer_diagnosis)  
+as LungcancerRate from lungcancertable group by Occupational_Exposure, Air_Pollution_Exposure, smoker  
+Order by Air_Pollution_Exposure  
