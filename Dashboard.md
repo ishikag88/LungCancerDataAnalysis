@@ -1,5 +1,4 @@
 ## Analysis done using dashboard
-13. Identify the smoking years' impact on lung cancer.  
 16. Identify the relation between lung cancer prevalence and air pollution levels.  
     A1 - ss name  
     select Air_Pollution_Exposure, round(avg(Lung_Cancer_Prevalence_Rate),5) as AvgPrevRate  
