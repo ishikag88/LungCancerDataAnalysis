@@ -49,7 +49,6 @@ The Lung Cancer Prediction Dataset contains patient records that help analyze ri
 20. Determine if treatment type has a significant impact on survival years.
 21. Compare lung cancer prevalence in men vs. women across countries.
 22. Find how occupational exposure, smoking, and air pollution collectively impact lung cancer rates.
-23. Analyze the impact of early detection on survival years.
 
 ## 📩 Contact :
 📧 Email: ishika.agrawal0105@gmail.com    
