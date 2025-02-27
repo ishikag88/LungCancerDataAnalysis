@@ -154,6 +154,15 @@ WHERE Lung_Cancer_Prevalence_Rate =
 <img src="allimages/Q12.png">
 </picture>
 
+*Identify the smoking years' impact on lung cancer.*
+
+select Lung_Cancer_Diagnosis, Avg(Years_of_Smoking) as AvgSmokingYears from lungcancertable  
+Group by Lung_Cancer_Diagnosis;
+
+<picture>
+<img src="allimages/Q13.png">
+</picture>  
+
 *14. Determine the mortality rate for patients with and without early detection.*  
 
 SELECT Early_Detection,  
