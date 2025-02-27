@@ -182,7 +182,7 @@ from lungcancertable Group by Developed_or_Developing;
 <img src="allimages/Q.15.png">
 </picture>  
 
-*17. Find the average age of lung cancer patients for each country.*  
+*16. Find the average age of lung cancer patients for each country.*  
 
 select country, AVG(age) as AvgAgeLCPatients from lungcancertable  
 where Lung_Cancer_Diagnosis = 'Yes' group by country;  
@@ -191,7 +191,7 @@ where Lung_Cancer_Diagnosis = 'Yes' group by country;
 <img src="allimages/Q17.png">
 </picture>
 
-*18. Calculate the risk factor of lung cancer by smoker status, passive smoking, and family history.*  
+*17. Calculate the risk factor of lung cancer by smoker status, passive smoking, and family history.*  
 
 SELECT Smoker, Passive_Smoker, Family_History, COUNT(*) AS Total_Cases,  
 SUM(CASE WHEN lung_cancer_diagnosis = 'Yes' THEN 1 ELSE 0 END) AS Lung_Cancer_Cases,  
@@ -204,7 +204,7 @@ ORDER BY Risk_Factor_Percentage DESC;
 <img src="allimages/Q18.png">
 </picture>
 
-*19. Rank countries based on their mortality rate.*  
+*18. Rank countries based on their mortality rate.*  
 
 WITH CountryMortality AS (  
 SELECT Country, SUM(Mortality_Rate) AS Country_Total_Mortality  
@@ -224,8 +224,49 @@ AS Rank FROM CountryMortality cm CROSS JOIN TotalMortality tm ORDER BY Rank;
 
 <picture>
 <img src="allimages/Q19 II.png">
-</picture>
+</picture>  
 
-### Analysis Based on Dashboard
-**Refer To Dashboard.md**
+*19. Identify the relation between lung cancer prevalence and air pollution levels.*  
+    
+select Air_Pollution_Exposure, round(avg(Lung_Cancer_Prevalence_Rate),5) as AvgPrevRate   
+from lungcancertable Group by Air_Pollution_Exposure;  
+
+<picture>
+<img src="allimages/A1.png">
+</picture>   
+    
+*20. Determine if treatment type has a significant impact on survival years.*  
+     
+select Treatment_Type, avg(Survival_Years) as AvgSurvivalYears from lungcancertable   
+group by Treatment_Type;  
+
+<picture>
+<img src="allimages/A2.png">
+</picture>   
+
+*21. Compare lung cancer prevalence in men vs. women across countries.*  
+
+select Country, gender, avg(Lung_Cancer_Prevalence_Rate) as PrevalenceRate   
+from lungcancertable group by country, Gender order by country asc;  
+
+<picture>
+<img src="allimages/A3I.png">
+</picture>  
+<picture>
+<img src="allimages/A3II.png">
+</picture>  
+<picture>
+<img src="allimages/A3III.png">
+</picture>  
+    
+*22. Find how occupational exposure, smoking, and air pollution collectively impact lung cancer rates.*  
+
+select Air_Pollution_Exposure, Occupational_Exposure, smoker,  
+sum(case when lung_cancer_diagnosis = 'Yes' then 1 else 0 end)*1.0/count(lung_cancer_diagnosis)    
+as LungcancerRate from lungcancertable group by Occupational_Exposure, Air_Pollution_Exposure,   
+smoker Order by Air_Pollution_Exposure  
+
+<picture>
+<img src="allimages/A4.png">
+</picture>  
 
