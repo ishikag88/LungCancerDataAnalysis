@@ -42,7 +42,7 @@ The Lung Cancer Prediction Dataset contains patient records that help analyze ri
 
 ### Advanced Level
 
-16. Identify the correlation between lung cancer prevalence and air pollution levels.
+16. Identify the relation between lung cancer prevalence and air pollution levels.
 17. Find the average age of lung cancer patients for each country.
 18. Calculate the risk factor of lung cancer by smoker status, passive smoking, and family history.
 19. Rank countries based on their mortality rate.
