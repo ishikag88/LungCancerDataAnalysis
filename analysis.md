@@ -152,9 +152,9 @@ WHERE Lung_Cancer_Prevalence_Rate =
 
 <picture>
 <img src="allimages/Q12.png">
-</picture>
+</picture>  
 
-*Identify the smoking years' impact on lung cancer.*
+*13. Identify the smoking years' impact on lung cancer.*
 
 select Lung_Cancer_Diagnosis, Avg(Years_of_Smoking) as AvgSmokingYears from lungcancertable  
 Group by Lung_Cancer_Diagnosis;
@@ -166,8 +166,8 @@ Group by Lung_Cancer_Diagnosis;
 *14. Determine the mortality rate for patients with and without early detection.*  
 
 SELECT Early_Detection,  
-    SUM(CASE WHEN Early_Detection = 'Yes' THEN Mortality_Rate ELSE 0 END) * 1.0 / SUM(Mortality_Rate)  
-	AS MortalityRate FROM lungcancertable GROUP BY Early_Detection;  
+SUM(CASE WHEN Early_Detection = 'Yes' THEN Mortality_Rate ELSE 0 END) * 1.0 / SUM(Mortality_Rate)  
+AS MortalityRate FROM lungcancertable GROUP BY Early_Detection;   
 
 <picture>
 <img src="allimages/Q14.png">
@@ -176,11 +176,11 @@ SELECT Early_Detection,
 *15. Group the lung cancer prevalence rate by developed vs. developing.*  
 
 select Developed_or_Developing, round(sum(lung_cancer_prevalence_rate),2) as totalLCPrevalenceRate  
-from lungcancertable Group by Developed_or_Developing;  
+from lungcancertable Group by Developed_or_Developing;    
 
 <picture>
 <img src="allimages/Q.15.png">
-</picture>
+</picture>  
 
 *17. Find the average age of lung cancer patients for each country.*  
 
@@ -196,9 +196,9 @@ where Lung_Cancer_Diagnosis = 'Yes' group by country;
 SELECT Smoker, Passive_Smoker, Family_History, COUNT(*) AS Total_Cases,  
 SUM(CASE WHEN lung_cancer_diagnosis = 'Yes' THEN 1 ELSE 0 END) AS Lung_Cancer_Cases,  
 (SUM(CASE WHEN lung_cancer_diagnosis = 'Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*))  
-AS Risk_Factor_Percentage FROM lungcancertable  
-GROUP BY Smoker, Passive_Smoker, Family_History  
-ORDER BY Risk_Factor_Percentage DESC;  
+AS Risk_Factor_Percentage FROM lungcancertable   
+GROUP BY Smoker, Passive_Smoker, Family_History    
+ORDER BY Risk_Factor_Percentage DESC;   
 
 <picture>
 <img src="allimages/Q18.png">
@@ -212,12 +212,11 @@ FROM lungcancertable GROUP BY Country
 ),  
 TotalMortality AS (  
 SELECT SUM(Country_Total_Mortality) AS Total_Global_Mortality FROM CountryMortality  
-)
--- Step 3: Compute the mortality rate percentage and rank countries
+)  
 SELECT cm.Country, cm.Country_Total_Mortality,  
 (cm.Country_Total_Mortality * 100.0 / tm.Total_Global_Mortality) AS Mortality_Percentage,  
-DENSE_RANK() OVER (ORDER BY (cm.Country_Total_Mortality * 100.0 / tm.Total_Global_Mortality) DESC) AS Rank
-FROM CountryMortality cm CROSS JOIN TotalMortality tm ORDER BY Rank;  
+DENSE_RANK() OVER (ORDER BY (cm.Country_Total_Mortality * 100.0 / tm.Total_Global_Mortality) DESC)  
+AS Rank FROM CountryMortality cm CROSS JOIN TotalMortality tm ORDER BY Rank;  
 
 <picture>
 <img src="allimages/Q19 I.png">
