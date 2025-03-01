@@ -1,4 +1,6 @@
-# **Lung Cancer Data Analysis Project**
+# **Lung Cancer Data Analysis Project**  
+<picture><img src="allimages/LCOverviewDashboardpart2.png"></picture>
+<picture><img src="allimages/LCSurvivalDashboard1.png"></picture>
 
 ## Tools :
 
