@@ -1,1 +1,8 @@
-
+<picture><img src="allimages/LCOverviewDashboard1.png"></picture>
+<picture><img src="allimages/LCOverviewDashboardpart2.png"></picture>
+<picture><img src="allimages/LCOverviewDashboardpart3.png"></picture>
+<picture><img src="allimages/LCOverviewDashboardpart4.png"></picture>
+<picture><img src="allimages/LCSurvivalDashboard1.png"></picture>
+<picture><img src="allimages/LCSurvivalDashboard2.png"></picture>
+<picture><img src="allimages/LCSurvivalDashboard3.png"></picture>
+<picture><img src="allimages/LCSurvivalDashboard4.png"></picture>
