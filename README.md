@@ -50,7 +50,23 @@ The Lung Cancer Prediction Dataset contains patient records that help analyze ri
 19. Rank countries based on their mortality rate.
 20. Determine if treatment type has a significant impact on survival years.
 21. Compare lung cancer prevalence in men vs. women across countries.
-22. Find how occupational exposure, smoking, and air pollution collectively impact lung cancer rates.
+22. Find how occupational exposure, smoking, and air pollution collectively impact lung cancer rates.  
+
+## Business Recommendations  
+Lung cancer poses a significant health burden, with smoking and environmental exposure as major risk factors.  
+To improve patient outcomes and reduce mortality rates, businesses in healthcare, pharmaceuticals, and public health should focus  
+on the following strategic initiatives:  
+### 1. Prioritize Early Detection Initiatives -  
+Invest in advanced diagnostic technologies, such as AI-driven tools and low-dose CT scans, to enhance early lung cancer detection,  
+particularly in high-risk populations.  
+### 2. Expand Smoking Cessation Programs -  
+Launch awareness campaigns and provide support for smoking cessation through nicotine replacement therapies and digital interventions  
+to reduce smoking-related lung cancer cases.  
+### 3. Leverage Data for Personalized Treatment -  
+Invest in AI and predictive analytics to develop personalized treatment plans and support precision medicine approaches for better  
+outcomes in chemotherapy and immunotherapy.  
+### 4. Promote Environmental Health & Access to Treatment -  
+Collaborate with policymakers to reduce air pollution and enhance access to surgical treatments, ensuring affordable care in underserved regions.  
 
 ## 📩 Contact :
 📧 Email: ishika.agrawal0105@gmail.com    
