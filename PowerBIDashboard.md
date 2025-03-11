@@ -1,3 +1,5 @@
+<picture><img src="allimages/LCDashboard1.png"></picture>  
+<picture><img src="allimages/LCDashboard2.png"></picture>  
 <picture><img src="allimages/LCOverviewDashboard1.png"></picture>
 <picture><img src="allimages/LCOverviewDashboardpart2.png"></picture>
 <picture><img src="allimages/LCOverviewDashboardpart3.png"></picture>
