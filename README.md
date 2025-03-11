@@ -1,6 +1,6 @@
 # **Lung Cancer Data Analysis Project**  
-<picture><img src="allimages/LCOverviewDashboardpart2.png"></picture>
-<picture><img src="allimages/LCSurvivalDashboard1.png"></picture>
+<picture><img src="allimages/LCDashboard1.png"></picture>
+<picture><img src="allimages/LCDashboard2.png"></picture>
 
 ## Tools :
 
